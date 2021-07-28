@@ -36,8 +36,8 @@ RUN cd htslib && autoheader &&  autoconf && ./configure && make -j 4 && make ins
 ENV PATH="/usr/local/lib:/app:$PATH"
 ENV LD_LIBRARY_PATH="/usr/local/lib:/app:$LD_LIBRARY_PATH"
 
-RUN wget https://github.com/samtools/samtools/releases/download/1.3.1/samtools-1.3.1.tar.bz2
-RUN tar xjf samtools-1.3.1.tar.bz2
-RUN cd samtools-1.3.1 && make -j 4 && make install
+RUN wget https://github.com/samtools/samtools/releases/download/1.13/samtools-1.13.tar.bz2
+RUN tar xjf samtools-1.13.tar.bz2
+RUN cd samtools-1.13 && make -j 4 && make install
 
-RUN git clone --recursive https://github.com/edawson/check-sex && cd check-sex && cp check_sex_samtools.sh /usr/bin/
+RUN git clone --recursive https://github.com/close0/check-sex && cd check-sex && cp check_sex_samtools.sh /usr/bin/
